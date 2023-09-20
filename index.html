@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Калькулятор</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <input id="first-operand" placeholder="a">
+    <input id="second-operand" placeholder="b">
+    <button id="solve">Решить</button>
+    <span id="solution"></span>
+    <div id="error"></div>
+    <div id="numpad">
+        <button class="numpad-decimal">1</button>
+        <button class="numpad-decimal">2</button>
+        <button class="numpad-decimal">3</button>
+        <button class="numpad-decimal">4</button>
+        <button class="numpad-decimal">5</button>
+        <button class="numpad-decimal">6</button>
+        <button class="numpad-decimal">7</button>
+        <button class="numpad-decimal">8</button>
+        <button class="numpad-decimal">9</button>
+        <button id="numpad-comma" class="numpad-decimal">,</button>
+        <button class="numpad-decimal">0</button>
+        <button id="numpad-arrow">&rarr;</button>
+    </div>
+    <div id="operations">
+        <div>
+            <input id="add-numbers" name="operation" type="radio" data-operands="numbers" checked>
+            <label for="add-numbers">Сложение чисел</label>
+        </div>
+        <div>
+            <input id="subtract" name="operation" type="radio" data-operands="numbers">
+            <label for="subtract">Вычитание чисел</label>
+        </div>
+        <div>
+            <input id="multiply" name="operation" type="radio" data-operands="numbers">
+            <label for="multiply">Умножение чисел</label>
+        </div>
+        <div>
+            <input id="divide" name="operation" type="radio" data-operands="numbers">
+            <label for="divide">Деление чисел</label>
+        </div>
+        <div>
+            <input id="negate" name="operation" type="radio" data-operands="boolean">
+            <label for="negate">Отрицание значения</label>
+        </div>
+        <div>
+            <input id="add-strings" name="operation" type="radio" data-operands="strings">
+            <label for="add-strings">Сложение строк</label>
+        </div>
+        <div>
+            <input id="add-arrays" name="operation" type="radio" data-operands="arrays">
+            <label for="add-arrays">Посимвольное сложение массивов</label>
+        </div>
+    </div>
+</body>
+
+</html>
