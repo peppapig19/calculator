@@ -4,15 +4,14 @@
 <head>
     <title>Калькулятор</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="main.js"></script>
 </head>
 
 <body>
-    <input id="first-operand" placeholder="a">
-    <input id="second-operand" placeholder="b">
-    <button id="solve">Решить</button>
-    <span id="solution"></span>
-    <div id="error"></div>
+    <div id="calculation-container">
+        <button id="solve" disabled>Решить</button>
+    </div>
     <div id="numpad">
         <button class="numpad-decimal">1</button>
         <button class="numpad-decimal">2</button>
@@ -23,38 +22,44 @@
         <button class="numpad-decimal">7</button>
         <button class="numpad-decimal">8</button>
         <button class="numpad-decimal">9</button>
-        <button id="numpad-comma" class="numpad-decimal">,</button>
+        <button id="numpad-dot" class="numpad-decimal">.</button>
         <button class="numpad-decimal">0</button>
-        <button id="numpad-arrow">&rarr;</button>
+        <button id="numpad-arrow">&larr;</button>
     </div>
+    <label for="operand-count">Количество операндов:</label>
+    <select id="operand-count"></select>
     <div id="operations">
         <div>
-            <input id="add-numbers" name="operation" type="radio" data-operands="numbers" checked>
+            <input id="add-numbers" name="operation" type="radio" data-operand="number">
             <label for="add-numbers">Сложение чисел</label>
         </div>
         <div>
-            <input id="subtract" name="operation" type="radio" data-operands="numbers">
+            <input id="subtract" name="operation" type="radio" data-operand="number" data-inputCount="2">
             <label for="subtract">Вычитание чисел</label>
         </div>
         <div>
-            <input id="multiply" name="operation" type="radio" data-operands="numbers">
+            <input id="multiply" name="operation" type="radio" data-operand="number">
             <label for="multiply">Умножение чисел</label>
         </div>
         <div>
-            <input id="divide" name="operation" type="radio" data-operands="numbers">
+            <input id="divide" name="operation" type="radio" data-operand="number" data-inputCount="2">
             <label for="divide">Деление чисел</label>
         </div>
         <div>
-            <input id="negate" name="operation" type="radio" data-operands="boolean">
+            <input id="negate" name="operation" type="radio" data-operand="text" data-inputCount="1">
             <label for="negate">Отрицание значения</label>
         </div>
         <div>
-            <input id="add-strings" name="operation" type="radio" data-operands="strings">
+            <input id="add-strings" name="operation" type="radio" data-operand="text">
             <label for="add-strings">Сложение строк</label>
         </div>
         <div>
-            <input id="add-arrays" name="operation" type="radio" data-operands="arrays">
-            <label for="add-arrays">Посимвольное сложение массивов</label>
+            <input id="add-arrays" name="operation" type="radio" data-operand="text">
+            <label for="add-arrays">Поэлементное сложение массивов</label>
+        </div>
+        <div>
+            <input id="add-images" name="operation" type="radio" data-operand="file">
+            <label for="add-images">Сложение изображений по пикселям</label>
         </div>
     </div>
 </body>

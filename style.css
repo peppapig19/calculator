@@ -1,3 +1,21 @@
+#input-container,
+#preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.preview {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+img.solution {
+    margin-top: 10px;
+}
+
 #error {
     color: red;
 }
@@ -25,10 +43,12 @@
     background-color: lightblue;
 }
 
-#numpad-comma, #numpad-arrow {
+#numpad-dot,
+#numpad-arrow {
     background-color: lightgreen;
 }
 
+#operand-count,
 #operations {
     margin-top: 10px;
 }
