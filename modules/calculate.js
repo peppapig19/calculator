@@ -51,7 +51,7 @@ function addNumbers(values) {
     if (values.every(isValidNumber)) {
         let res = 0;
         values.forEach(value => {
-            res += parseFloat(value);
+            res += parseFloat(value.replace(',', '.'));
         })
         return +res.toFixed(2);
     } else {
@@ -61,7 +61,7 @@ function addNumbers(values) {
 
 function subtract(values) {
     if (values.every(isValidNumber)) {
-        let res = values[0] - values[1];
+        let res = parseFloat(values[0].replace(',', '.')) - parseFloat(values[1].replace(',', '.'));
         return +res.toFixed(2);
     } else {
         return NaN;
@@ -72,7 +72,7 @@ function multiply(values) {
     if (values.every(isValidNumber)) {
         let res = 1;
         values.forEach(value => {
-            res *= parseFloat(value);
+            res *= parseFloat(value.replace(',', '.'));
         })
         return +res.toFixed(2);
     } else {
@@ -82,7 +82,7 @@ function multiply(values) {
 
 function divide(values) {
     if (values.every(isValidNumber)) {
-        let res = values[0] / values[1];
+        let res = parseFloat(values[0].replace(',', '.')) / parseFloat(values[1].replace(',', '.'));
         if (!isFinite(res)) {
             throw new Error('На ноль делить нельзя.');
         }
@@ -156,7 +156,7 @@ function addImages(values) {
             const heights = images.map(i => i.height);
             canvas.width = Math.max(...widths);
             canvas.height = Math.max(...heights);
-            ctx.globalCompositeOperation = 'lighter';
+            ctx.globalCompositeOperation = 'multiply';
             /*const resultData = ctx.createImageData(canvas.width, canvas.height);
             const imagesData = [];*/
             images.forEach(image => {
