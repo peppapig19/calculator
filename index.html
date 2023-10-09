@@ -3,15 +3,13 @@
 
 <head>
     <title>Калькулятор</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/libs/jquery-3.7.1.min.js"></script>
+    <script type="module" src="./index.js"></script>
 </head>
 
 <body>
-    <div id="calculation-container">
-        <button id="solve" disabled>Решить</button>
-    </div>
+    <div id="calculation-container"></div>
     <div id="numpad">
         <button class="numpad-decimal">1</button>
         <button class="numpad-decimal">2</button>
@@ -28,13 +26,13 @@
     </div>
     <label for="operand-count">Количество операндов:</label>
     <select id="operand-count"></select>
-    <div id="operations">
+    <div id="operation-select">
         <div>
-            <input id="add-numbers" name="operation" type="radio" data-operand="number">
+            <input id="add-numbers" name="operation" type="radio" data-operand="number" checked>
             <label for="add-numbers">Сложение чисел</label>
         </div>
         <div>
-            <input id="subtract" name="operation" type="radio" data-operand="number" data-inputCount="2">
+            <input id="subtract" name="operation" type="radio" data-operand="number" data-maxOperands="2">
             <label for="subtract">Вычитание чисел</label>
         </div>
         <div>
@@ -42,11 +40,11 @@
             <label for="multiply">Умножение чисел</label>
         </div>
         <div>
-            <input id="divide" name="operation" type="radio" data-operand="number" data-inputCount="2">
+            <input id="divide" name="operation" type="radio" data-operand="number" data-maxOperands="2">
             <label for="divide">Деление чисел</label>
         </div>
         <div>
-            <input id="negate" name="operation" type="radio" data-operand="text" data-inputCount="1">
+            <input id="negate" name="operation" type="radio" data-operand="text" data-maxOperands="1">
             <label for="negate">Отрицание значения</label>
         </div>
         <div>
